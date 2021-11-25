@@ -13,12 +13,25 @@ const studentSchema = mongoose.Schema(
             required: true
         },
         password: String,
+        classe: {
+            type: mongoose.Types.ObjectId,
+            ref: "classe"
+        },
         skills: [
             {
                 title: String,
                 description: String
             }
         ]
+    },
+    {
+        timestamps: true
+    }
+);
+
+const calsseSchema = mongoose.Schema(
+    {
+        label: String
     },
     {
         timestamps: true
@@ -37,4 +50,5 @@ const studentSchema = mongoose.Schema(
 // })
 
 const Student = mongoose.model("student", studentSchema);
-module.exports = { Student };
+const Classe = mongoose.model("classe", calsseSchema);
+module.exports = { Student, Classe };
