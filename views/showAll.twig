@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/products">Create New Product</a>
+    <table border="1" style="width: 33%; display: block; margin: auto">
+      <thead>
+        <th>#</th>
+        <th>Label</th>
+        <th>Price</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td>#</td>
+          <td>{{ product.label }}</td>
+          <td>${{ product.price }}</td>
+          <td><a href="/products/{{ product._id }}"> Details</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
