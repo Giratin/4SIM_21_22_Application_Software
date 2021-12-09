@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    service_backend:
+      build:
+        context: .
+        name: tryvl/4sim4_app_software:v1.0.0
+      ports:
+        - "30010:3000"
+      restarts: unless_stopped
+      depends_on:
+        - service_database
+
+    service_database:
+      image: mongo:5
+      ports:
+        - "30040:27017"
