@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/product_management_4sim2")
+mongoose.connect("mongodb://service_database/product_management_4sim2")
   .then(() => console.log("database connected"))
   .catch((exc) => console.log(exc));
 
