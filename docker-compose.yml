@@ -6,7 +6,7 @@ services:
         context: .
       ports:
         - "30010:3000"
-      restarts: unless_stopped
+      restart: unless_stopped
       depends_on:
         - service_database
 
